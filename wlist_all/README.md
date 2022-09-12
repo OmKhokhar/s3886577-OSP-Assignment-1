@@ -1,0 +1,1 @@
+Use "scl enable devtoolset-9 bash" when running the code on rmit server. 
