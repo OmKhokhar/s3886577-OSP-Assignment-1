@@ -1,0 +1,25 @@
+.default: all
+
+all: task1 task2 task3 task4 task5
+
+clean:
+	rm -rf task *.o *.dSYM
+	rm -r fifo3 fifo4 fifo5 fifo6 fifo7 fifo8 fifo9 fifo10 fifo11 fifo12 fifo13 fifo14 fifo15
+	
+task1: Task1.o Util.o
+	g++ -Wall -Werror -std=c++14 -g -O -o $@ $^
+
+task2: Task2.o Util.o
+	g++ -Wall -Werror -std=c++14 -g -O -o $@ $^
+
+task3: Task3.o Util.o
+	g++ -Wall -Werror -std=c++14 -pthread -g -O -o $@ $^
+
+task4: Task4.o Util.o 
+	g++ -Wall -Werror -std=c++14 -pthread -g -O -o $@ $^
+
+task5: Task5.o Util.o 
+	g++ -Wall -Werror -std=c++14 -pthread -g -O -o $@ $^
+
+%.o: %.cpp
+	g++ -Wall -Werror -std=c++14 -g -O -c $^
